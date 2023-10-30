@@ -2,8 +2,7 @@
 
 <template>
   <main class="mainContainer">
-    <h2>Volley-Stats</h2>
-    <p>Wszystkie najważniejsze dane dotyczące PlusLigi w jednym miejscu</p>
+    <h2>drużyny se wyświetlam normalnie</h2>
   </main>
 </template>
 
