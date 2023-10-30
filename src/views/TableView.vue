@@ -28,7 +28,8 @@ getData();
 
 <template>
   <main class="mainContainer">
-    <h2>Tabela to będzie kozacka</h2>
+    <SortedTable v-if="games.length" :games="games" />
+    <p v-else>Loading...</p>
   </main>
 </template>
 
