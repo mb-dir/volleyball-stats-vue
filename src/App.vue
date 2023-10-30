@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
+import Menu from "./components/Menu.vue";
 </script>
 
 <template>
-  <h1>Hello World</h1>
+  <Menu />
   <RouterView />
 </template>
 
-<style scoped></style>
+<style>
+#app {
+  font-family: sans-serif;
+}
+</style>
