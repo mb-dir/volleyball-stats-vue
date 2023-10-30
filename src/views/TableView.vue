@@ -2,21 +2,15 @@
 import type { singleGame, gamesResponse } from "@/types";
 import { ref, type Ref } from "vue";
 import SortedTable from "@/components/SortedTable.vue";
-
+import axios from "../axios";
+import { PLUSLIGA_DATA } from "../enums";
 const games: Ref<singleGame[]> = ref([]);
 
 const getData = async () => {
   try {
-    const res = await fetch(
-      "https://api-volleyball.p.rapidapi.com/games?league=113&season=2023",
-      {
-        headers: {
-          "x-rapidapi-key":
-            "df10653d8bmsh4483ed61b853b26p135ae4jsn28f7cc6f2c6e",
-        },
-      }
-    );
-    const data: gamesResponse = await res.json();
+    const { data } = await axios.get<gamesResponse>("/games", {
+      params: { league: PLUSLIGA_DATA.ID, season: PLUSLIGA_DATA.SEASON },
+    });
     games.value = data.response;
   } catch (error) {
     console.log(error);
